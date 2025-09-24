@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Кибер Зубр — консалтинг по информационной и кибербезопасности: НЦЗПД, GDPR, ОАЦ (66 приказ), PCI DSS, сканирование уязвимостей, обучение сотрудников." />
+  <meta name="keywords" content="кибербезопасность, информационная безопасность, НЦЗПД, GDPR, ОАЦ 66, PCI DSS, сканирование уязвимостей, обучение" />
+  <meta name="robots" content="index,follow" />
+  <title>Кибер Зубр | Информационная и кибербезопасность</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml" href="img/shield.svg" />
+</head>
+<body>
+  <canvas id="bg-particles" aria-hidden="true"></canvas>
+  <header class="header" id="top">
+    <div class="container flex between center-v">
+      <div class="logo">
+        <img src="img/shield.svg" alt="Кибер Зубр логотип" />
+        <span>Кибер Зубр</span>
+      </div>
+      <nav class="nav" aria-label="Главное меню">
+        <ul>
+          <li><a href="#hero" class="nav-link active">Главная</a></li>
+          <li><a href="#regulation" class="nav-link">Регулирование</a></li>
+          <li><a href="#services" class="nav-link">Услуги</a></li>
+          <li><a href="#about" class="nav-link">О нас</a></li>
+          <li><a href="#contacts" class="nav-link">Контакты</a></li>
+        </ul>
+      </nav>
+      <button class="btn primary open-modal" data-modal="consult-modal">Запросить консультацию</button>
+      <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- HERO / MAIN -->
+  <section class="hero" id="hero" tabindex="-1">
+    <div class="container grid hero-grid">
+      <div class="hero-content">
+        <h1><span class="accent-glow">Комплексная</span> кибер & информационная безопасность для бизнеса в СНГ</h1>
+        <p class="lead">Мы помогаем компаниям в Беларуси и регионе обеспечить соответствие требованиям <strong>НЦЗПД</strong>, <strong>GDPR</strong>, <strong>ОАЦ (66 приказ)</strong>, <strong>PCI DSS</strong>, повышаем устойчивость инфраструктуры и культуру безопасности сотрудников.</p>
+        <div class="cta">
+          <button class="btn primary open-modal" data-modal="consult-modal">Быстрый аудит</button>
+          <a href="#services" class="btn ghost">Наши услуги</a>
+        </div>
+        <ul class="hero-highlights">
+          <li><img src="img/scan.svg" alt="" />Сканирование уязвимостей и отчёт 24-48ч</li>
+          <li><img src="img/compliance.svg" alt="" />Roadmap для соответствия НЦЗПД / GDPR</li>
+          <li><img src="img/training.svg" alt="" />Обучение персонала с моделированием фишинга</li>
+        </ul>
+      </div>
+      <div class="hero-visual">
+        <div class="slider" aria-label="Ключевые направления">
+          <div class="slides">
+            <div class="slide active">
+              <h3>НЦЗПД & GDPR</h3>
+              <p>Оценка процессов обработки данных, DPIA, политика конфиденциальности, подготовка к проверкам.</p>
+            </div>
+            <div class="slide">
+              <h3>PCI DSS</h3>
+              <p>Предаудит, gap-анализ, помощь во внедрении мер, подготовка доказательной базы.</p>
+            </div>
+            <div class="slide">
+              <h3>Техническая защита</h3>
+              <p>Сканирование уязвимостей, конфигурационный аудит, базовые рекомендации hardening.</p>
+            </div>
+            <div class="slide">
+              <h3>Human Risk</h3>
+              <p>Программы повышения осведомлённости, симуляции фишинга, игровые сценарии обучения.</p>
+            </div>
+          </div>
+          <div class="slider-controls">
+            <button class="prev" aria-label="Предыдущий слайд">‹</button>
+            <button class="next" aria-label="Следующий слайд">›</button>
+          </div>
+          <div class="dots" role="tablist" aria-label="Слайды"></div>
+        </div>
+      </div>
+    </div>
+    <div class="floating floating-a"></div>
+    <div class="floating floating-b"></div>
+    <div class="floating floating-c"></div>
+  </section>
+
+  <!-- REGULATION -->
+  <section class="section regulation" id="regulation">
+    <div class="container">
+      <div class="section-head">
+        <h2>Регулирование и соответствие</h2>
+        <p class="sub">Практические шаги для снижения рисков штрафов, инцидентов и репутационных потерь.</p>
+      </div>
+      <div class="cards regulation-cards">
+        <article class="card reveal">
+          <img src="img/compliance.svg" alt="НЦЗПД" class="icon" />
+          <h3>НЦЗПД (BY)</h3>
+            <p>Структурируем реестр операций, классифицируем данные, внедряем минимизацию и принципы законности. Готовим пакет документов (политики, согласия, уведомления). Помогаем строить модель взаимодействия с НЦЗПД.</p>
+        </article>
+        <article class="card reveal">
+          <img src="img/governance.svg" alt="GDPR" class="icon" />
+          <h3>GDPR</h3>
+          <p>Gap-анализ, DPIA, построение Records of Processing Activities, внедрение механизмов Data Subject Rights, cookie / consent management и privacy by design подходов.</p>
+        </article>
+        <article class="card reveal">
+          <img src="img/shield.svg" alt="ОАЦ 66" class="icon" />
+          <h3>ОАЦ (66 приказ)</h3>
+          <p>Инвентаризация ИС, соотнесение с категориями, выбор организационно-технических мер, подготовка отчётности и обучение ответственных лиц.</p>
+        </article>
+        <article class="card reveal">
+          <img src="img/scan.svg" alt="PCI DSS" class="icon" />
+          <h3>PCI DSS</h3>
+          <p>Определяем скоуп, проводим предварительное сканирование ASV, создаём план закрытия несоответствий, готовим к взаимодействию с QSA.</p>
+        </article>
+      </div>
+      <div class="note">Ссылки на конкретные нормативные акты и руководства будут добавлены позже.</div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>Наши услуги</h2>
+        <p class="sub">Комбинируем стратегический консалтинг и практическую техническую экспертизу.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <img src="img/compliance.svg" alt="Комплаенс" />
+          <h3>Комплаенс аудит</h3>
+          <p>НЦЗПД / GDPR / 66 приказ / PCI DSS gap-анализ и дорожная карта внедрения.</p>
+          <button class="link-btn open-modal" data-modal="modal-compliance">Подробнее →</button>
+        </div>
+        <div class="service-card reveal">
+          <img src="img/scan.svg" alt="Уязвимости" />
+          <h3>Сканирование уязвимостей</h3>
+          <p>Регулярные отчёты, приоритизация и технические рекомендации по remediation.</p>
+          <button class="link-btn open-modal" data-modal="modal-scan">Подробнее →</button>
+        </div>
+        <div class="service-card reveal">
+          <img src="img/training.svg" alt="Обучение" />
+          <h3>Обучение и фишинг</h3>
+          <p>Модули e-learning, интерактивные сценарии и KPI по снижению кликов.</p>
+          <button class="link-btn open-modal" data-modal="modal-training">Подробнее →</button>
+        </div>
+        <div class="service-card reveal">
+          <img src="img/governance.svg" alt="Управление" />
+          <h3>Политики & процессы</h3>
+          <p>Разработка и актуализация набора политик, регламентов, инструкций и ролей.</p>
+          <button class="link-btn open-modal" data-modal="modal-policies">Подробнее →</button>
+        </div>
+        <div class="service-card reveal">
+          <img src="img/shield.svg" alt="Аудит конфигураций" />
+          <h3>Технический аудит</h3>
+          <p>Базовый hardening, анализ конфигураций, сетевых сегментаций и логирования.</p>
+          <button class="link-btn open-modal" data-modal="modal-tech">Подробнее →</button>
+        </div>
+        <div class="service-card reveal">
+          <img src="img/shield.svg" alt="Адаптация SOC" />
+          <h3>Поддержка внедрений</h3>
+          <p>SIEM/SOC readiness, выбор решений, интеграция alerting & процедур реагирования.</p>
+          <button class="link-btn open-modal" data-modal="modal-support">Подробнее →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="container about-layout">
+      <div class="about-text">
+        <h2>О компании</h2>
+        <p>«Кибер Зубр» — независимая команда экспертов по информационной и кибербезопасности с опытом проектов в e-commerce, финтехе, телекоммуникациях, логистике и производстве. Мы соединяем практику управления рисками, регуляторный комплаенс и технический слой защиты.</p>
+        <ul class="check-list">
+          <li>Фокус на измеримый результат (метрики риска, SLA remediation)</li>
+          <li>Vendor-neutral подход и прозрачность решений</li>
+          <li>Актуальные методики: OWASP, MITRE ATT&CK, ISO/IEC 27001 подходы</li>
+          <li>Конфиденциальность и минимизация избыточных данных</li>
+        </ul>
+        <div class="stats">
+          <div><span class="num" data-target="120">0</span><span class="label">+ просканированных хостов</span></div>
+          <div><span class="num" data-target="35">0</span><span class="label">политик разработано</span></div>
+          <div><span class="num" data-target="15">0</span><span class="label">DPIA завершено</span></div>
+          <div><span class="num" data-target="8">0</span><span class="label">лет совокупного опыта</span></div>
+        </div>
+      </div>
+      <div class="about-media">
+        <div class="parallax-box">
+          <img src="img/hero-abstract.svg" alt="Кибер безопасность" class="parallax" data-depth="0.2" />
+          <img src="img/shield.svg" alt="Shield" class="parallax small" data-depth="0.5" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="section contacts" id="contacts">
+    <div class="container">
+      <div class="section-head">
+        <h2>Свяжитесь с нами</h2>
+        <p class="sub">Получите первичную консультацию и roadmap безопасности.</p>
+      </div>
+      <div class="contact-layout">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Имя*</label>
+            <input type="text" id="name" name="name" required />
+            <span class="error"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email*</label>
+            <input type="email" id="email" name="email" required />
+            <span class="error"></span>
+          </div>
+          <div class="field">
+            <label for="company">Компания</label>
+            <input type="text" id="company" name="company" />
+          </div>
+          <div class="field">
+            <label for="topic">Интересующая область</label>
+            <select id="topic" name="topic">
+              <option>НЦЗПД / GDPR</option>
+              <option>PCI DSS</option>
+              <option>Сканирование уязвимостей</option>
+              <option>Обучение</option>
+              <option>Политики</option>
+              <option>Другое</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="message">Сообщение*</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <span class="error"></span>
+          </div>
+          <div class="form-foot">
+            <button type="submit" class="btn primary">Отправить</button>
+            <p class="form-note">Нажимая «Отправить», вы соглашаетесь на обработку введённых данных для связи. *Полям обязательно для заполнения.</p>
+          </div>
+          <div class="form-status" role="status" aria-live="polite"></div>
+        </form>
+        <div class="contact-info">
+          <ul class="info-list">
+            <li><strong>Домен:</strong> www.cyberzubr.by</li>
+            <li><strong>Email:</strong> <a href="mailto:info@cyberzubr.by">info@cyberzubr.by</a></li>
+            <li><strong>Регион:</strong> Беларусь + СНГ</li>
+            <li><strong>Фокус:</strong> Комплаенс, уязвимости, обучение, процессы</li>
+          </ul>
+          <div class="callout">Мы не просим лишних данных: только то, что помогает ответить на ваш запрос.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-layout">
+      <div class="foot-col">
+        <div class="logo small"><img src="img/shield.svg" alt="" /> Кибер Зубр</div>
+        <p class="foot-text">Практическая информационная и кибербезопасность для устойчивого развития бизнеса.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Навигация</h4>
+        <ul class="foot-nav">
+          <li><a href="#hero">Главная</a></li>
+          <li><a href="#regulation">Регулирование</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Фокус</h4>
+        <ul class="foot-nav">
+          <li>НЦЗПД</li>
+          <li>GDPR</li>
+          <li>PCI DSS</li>
+          <li>66 приказ ОАЦ</li>
+          <li>Awareness</li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Контакты</h4>
+        <p>Email: <a href="mailto:info@cyberzubr.by">info@cyberzubr.by</a></p>
+        <p>© <span id="year"></span> Кибер Зубр</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+  <div class="modal" id="consult-modal" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="consult-title">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-content" role="document">
+      <button class="modal-close" aria-label="Закрыть" data-close>×</button>
+      <h3 id="consult-title">Запрос экспресс-аудита</h3>
+      <p>Опишите кратко вашу инфраструктуру и ключевые задачи. Мы предложим первичный план и ориентиры по приоритетам.</p>
+      <form class="mini-form" id="auditForm">
+        <input type="text" name="org" placeholder="Компания" />
+        <input type="email" name="email" placeholder="Email*" required />
+        <textarea name="scope" rows="4" placeholder="Кратко: системы, пользователи, основные риски*" required></textarea>
+        <button class="btn primary w100" type="submit">Отправить</button>
+        <div class="mini-status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-compliance" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="modal-compliance-title">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-content">
+      <button class="modal-close" data-close aria-label="Закрыть">×</button>
+      <h3 id="modal-compliance-title">Комплаенс аудит</h3>
+      <p>Детальный gap-анализ процессов обработки данных, технических и организационных мер. Результат — матрица рисков, приоритизация, roadmap с quick wins и стратегическими инициативами.</p>
+    </div>
+  </div>
+  <div class="modal" id="modal-scan" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="modal-scan-title">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-content">
+      <button class="modal-close" data-close aria-label="Закрыть">×</button>
+      <h3 id="modal-scan-title">Сканирование уязвимостей</h3>
+      <p>Регулярное (ежемесячное / ежеквартальное) сканирование, корреляция результатов, исключение ложных срабатываний, рекомендации с учётом контекста и критичности.</p>
+    </div>
+  </div>
+  <div class="modal" id="modal-training" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="modal-training-title">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-content">
+      <button class="modal-close" data-close aria-label="Закрыть">×</button>
+      <h3 id="modal-training-title">Обучение</h3>
+      <p>Программа повышения осведомлённости: базовые модули (фишинг, пароли, социнженерия), тематические micro-learning блоки, геймификация и метрики (report rate, click rate).</p>
+    </div>
+  </div>
+  <div class="modal" id="modal-policies" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="modal-policies-title">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-content">
+      <button class="modal-close" data-close aria-label="Закрыть">×</button>
+      <h3 id="modal-policies-title">Политики и процессы</h3>
+      <p>Разработка набора документов: политика ИБ, управление доступами, резервное копирование, реагирование на инциденты, использование средств защиты, защита данных и пр.</p>
+    </div>
+  </div>
+  <div class="modal" id="modal-tech" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="modal-tech-title">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-content">
+      <button class="modal-close" data-close aria-label="Закрыть">×</button>
+      <h3 id="modal-tech-title">Технический аудит</h3>
+      <p>Проверка базовой безопасности систем: версии ПО, экспонированные сервисы, политика паролей, MFA, сегментация, журналирование, резервирование и мониторинг.</p>
+    </div>
+  </div>
+  <div class="modal" id="modal-support" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="modal-support-title">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-content">
+      <button class="modal-close" data-close aria-label="Закрыть">×</button>
+      <h3 id="modal-support-title">Поддержка внедрений</h3>
+      <p>Сопровождение проектов SIEM/SOC, подбор решений, KPI для процессов реагирования, формирование плана оптимизации и интеграции.</p>
+    </div>
+  </div>
+
+  <div class="scroll-top" id="scrollTop" aria-hidden="true" aria-label="Наверх">↑</div>
+
+  <script src="main.js"></script>
+</body>
+</html>
