@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>CyberZubr | Брошюра по услугам</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Брошюра CyberZubr: консалтинг по информационной и кибербезопасности, НЦЗПД, GDPR, 66 приказ, PCI DSS, уязвимости, обучение." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body{background:#0b0f17;padding:0 0 60px}
+    .brochure{padding:120px 0 40px}
+    .bro-header{max-width:960px;margin:0 auto 70px;display:grid;gap:34px}
+    .bro-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);padding:8px 16px;border-radius:40px;font-size:13px;letter-spacing:.5px;text-transform:uppercase;color:#cbd5e1;border:1px solid rgba(255,255,255,.1)}
+    .bro-title{font-size:54px;line-height:1.05;font-weight:600;background:linear-gradient(135deg,#ffffff,#cbd5e1);-webkit-background-clip:text;background-clip:text;color:transparent;margin:6px 0 10px}
+    .bro-sub{font-size:20px;color:#94a3b8;max-width:760px}
+    .pill{display:inline-block;background:linear-gradient(135deg,#6366f1,#0ea5e9);color:#fff;padding:6px 14px;font-size:12px;border-radius:30px;letter-spacing:.5px;font-weight:500}
+    .section-block{max-width:1160px;margin:0 auto 90px;padding:0 24px}
+    .sec-head{margin-bottom:34px}
+    .sec-head h2{font-size:40px;font-weight:600;line-height:1.15;background:linear-gradient(135deg,#fff,#d1d5db);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px}
+    .sec-head p{font-size:18px;color:#9ca3af;max-width:840px}
+    .value-grid{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .v-card{background:linear-gradient(155deg,#182230,#0f172a);padding:26px 24px;border-radius:22px;border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
+    .v-card::before{content:"";position:absolute;width:150%;height:150%;left:-40%;top:-60%;background:radial-gradient(circle at 25% 35%,rgba(99,102,241,.35),rgba(14,165,233,0));opacity:0;transition:.8s}
+    .v-card:hover::before{opacity:1}
+    .v-card h3{font-size:20px;font-weight:600;background:linear-gradient(135deg,#6366f1,#0ea5e9);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .v-card p{font-size:14px;color:#94a3b8;line-height:1.5}
+    .tagline{font-size:16px;color:#94a3b8;margin-top:12px}
+    .methodology{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
+    .phase{background:#121b29;padding:26px 24px;border-radius:20px;border:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;gap:10px;position:relative}
+    .phase h4{font-size:16px;letter-spacing:.5px;text-transform:uppercase;color:#fff}
+    .phase p{font-size:14px;color:#94a3b8;line-height:1.5}
+    .phase span.step{position:absolute;top:-16px;left:18px;background:linear-gradient(135deg,#6366f1,#0ea5e9);color:#fff;font-size:13px;padding:6px 14px;border-radius:40px;box-shadow:0 6px 18px -6px rgba(0,0,0,.6)}
+    .matrix{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px}
+    .matrix th, .matrix td{padding:10px 14px;border:1px solid #1f2b39;text-align:left}
+    .matrix th{background:#182230;font-weight:600;color:#e2e8f0}
+    .matrix td{background:#0f172a;color:#94a3b8}
+    .matrix td.ok{color:#10b981;font-weight:500}
+    .matrix td.part{color:#f59e0b;font-weight:500}
+    .benefits{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+    .benefit{display:flex;gap:16px;align-items:flex-start}
+    .benefit-icon{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#6366f1,#0ea5e9);box-shadow:0 6px 18px -8px rgba(0,0,0,.55)}
+    .benefit h3{font-size:18px;font-weight:600;margin-bottom:6px}
+    .benefit p{font-size:14px;line-height:1.5;color:#94a3b8}
+    .kpis{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:26px}
+    .kpi{background:#121b29;padding:20px 22px;border:1px solid rgba(255,255,255,.07);border-radius:18px;display:flex;flex-direction:column;gap:6px;position:relative}
+    .kpi span.val{font-size:30px;font-weight:600;background:linear-gradient(135deg,#6366f1,#0ea5e9);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .kpi span.label{font-size:12px;letter-spacing:.5px;color:#94a3b8;text-transform:uppercase}
+    .cta-box{background:linear-gradient(135deg,#1d2735,#121b29 60%);padding:50px 46px;border-radius:34px;border:1px solid rgba(255,255,255,.08);display:grid;gap:26px;position:relative;overflow:hidden}
+    .cta-box::before{content:"";position:absolute;width:160%;height:160%;top:-80%;left:-40%;background:radial-gradient(circle at 30% 40%,rgba(99,102,241,.45),rgba(14,165,233,0));opacity:.35}
+    .cta-box h2{font-size:38px;font-weight:600;background:linear-gradient(135deg,#fff,#d1d5db);-webkit-background-clip:text;background-clip:text;color:transparent;margin:0}
+    .cta-box p{font-size:16px;color:#94a3b8;max-width:780px}
+    .inline-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+    .mini{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);font-size:11px;padding:4px 10px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase;color:#cbd5e1}
+    .footer-mini{max-width:960px;margin:70px auto 0;padding:0 24px;font-size:11px;color:#64748b;line-height:1.5}
+    .print-note{font-size:12px;color:#64748b;margin-top:-10px;margin-bottom:28px}
+    @media (max-width:760px){.bro-title{font-size:42px}.sec-head h2{font-size:32px}.cta-box h2{font-size:32px}.bro-header{margin-bottom:50px}}
+    /* Print */
+    @media print {
+      body{background:#fff;color:#000;font-size:12px}
+      header,nav,.scroll-top{display:none !important}
+      a{text-decoration:none;color:#000}
+      .brochure{padding:20px 0 0}
+      .v-card,.phase,.kpi,.cta-box{box-shadow:none;background:#fff;border:1px solid #ddd}
+      .v-card::before,.cta-box::before{display:none}
+      .benefit-icon{box-shadow:none}
+      .cta-box h2,.sec-head h2,.bro-title{background:none;color:#000}
+      .kpi span.val{background:none;color:#000}
+      .page-break{page-break-after:always;margin:0;padding:0;border:none}
+    }
+  </style>
+</head>
+<body>
+  <main class="brochure">
+    <header class="bro-header container">
+      <span class="bro-badge">CyberZubr — краткая брошюра</span>
+      <h1 class="bro-title">Практическая кибер<br>и информационная безопасность для роста бизнеса</h1>
+      <p class="bro-sub">Мы помогаем организациям в Беларуси и СНГ достигать соответствия НЦЗПД / GDPR / 66 приказ ОАЦ / PCI DSS, управлять рисками и повышать уровень зрелости процессов безопасности — без избыточной бюрократии и vendor lock-in.</p>
+      <div class="inline-badges">
+        <span class="mini">НЦЗПД</span>
+        <span class="mini">GDPR</span>
+        <span class="mini">PCI DSS</span>
+        <span class="mini">66 приказ</span>
+        <span class="mini">Awareness</span>
+        <span class="mini">Vulnerability</span>
+      </div>
+    </header>
+
+    <section class="section-block" id="value">
+      <div class="sec-head">
+        <h2>С чем приходят клиенты</h2>
+        <p>Чаще всего стартуем с неструктурированных требований регулятора, отсутствия картины рисков, высокого уровня человеческого фактора или необходимости подготовиться к проверке / сертификации.</p>
+      </div>
+      <div class="value-grid">
+        <div class="v-card">
+          <h3>Комплаенс давление</h3>
+          <p>Требуется быстро понять разрыв между текущим состоянием и требованиями НЦЗПД / GDPR / 66 приказа / PCI DSS и выстроить реалистичный roadmap.</p>
+        </div>
+        <div class="v-card">
+          <h3>Незакрытые уязвимости</h3>
+          <p>Накопленные findings без приоритизации. Нужно ввести регулярный цикл сканирования и remediation с метриками.</p>
+        </div>
+        <div class="v-card">
+          <h3>Разрозненные политики</h3>
+          <p>Нет единого набора актуальных документов: доступы, резервное копирование, реагирование, защита данных.</p>
+        </div>
+        <div class="v-card">
+          <h3>Human Risk</h3>
+          <p>Фишинг-инциденты, слабые пароли, низкая вовлеченность сотрудников в культуру безопасности.</p>
+        </div>
+        <div class="v-card">
+          <h3>Отсутствие измеримости</h3>
+          <p>Нет KPI по рискам, remediation SLA и циклам обучения — сложно защищать бюджет и приоритеты.</p>
+        </div>
+        <div class="v-card">
+          <h3>Фрагментированная инфраструктура</h3>
+          <p>Разные окружения, облако + on-prem, нет унифицированного минимального baseline hardening.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="services">
+      <div class="sec-head">
+        <h2>Пакеты и услуги</h2>
+        <p>Комбинируем стратегический и технический векторы. Формируем прозрачный scope, сроки и показатели успеха.</p>
+      </div>
+      <div class="value-grid">
+        <div class="v-card"><h3>Gap-анализ комплаенса</h3><p>Стандартизированный assessment с матрицей рисков и цветовой приоритизацией.</p></div>
+        <div class="v-card"><h3>Privacy & Data Flow</h3><p>Инвентаризация данных, регламент обработки, Records, DPIA (risk-based).</p></div>
+        <div class="v-card"><h3>Vulnerability Program</h3><p>Цикл: scan → triage → remediation → metrics. Выстраиваем SLA и отчётность.</p></div>
+        <div class="v-card"><h3>Security Awareness</h3><p>Модули, фишинг кампании, playbooks, снижение click rate.</p></div>
+        <div class="v-card"><h3>Policies Factory</h3><p>Создание / обновление полного комплекта политик и процедур.</p></div>
+        <div class="v-card"><h3>Technical Hardening</h3><p>Baseline: учетные записи, MFA, журналирование, резервирование, сегментация.</p></div>
+      </div>
+      <p class="tagline">Каждый пакет можно масштабировать по глубине — от экспресс формата до расширенного с внедрением.</p>
+    </section>
+
+    <section class="section-block" id="method">
+      <div class="sec-head">
+        <h2>Подход и методология</h2>
+        <p>Оперируем принципами risk-based приоритизации, прозрачности и минимизации. Используем OWASP, MITRE ATT&CK, ISO/IEC 27001 aligned практики без излишнего усложнения.</p>
+      </div>
+      <div class="methodology">
+        <div class="phase"><span class="step">1</span><h4>Discovery</h4><p>Сбор контекста: домены обработки данных, системы, угрозы, ограничения. Быстрый baseline maturity snapshot.</p></div>
+        <div class="phase"><span class="step">2</span><h4>Gap & Risks</h4><p>Матрица: контроль → статус → риск → рекомендация. Классификация по влиянию и усилиям (value / effort).</p></div>
+        <div class="phase"><span class="step">3</span><h4>Roadmap</h4><p>Формирование фаз внедрения: Quick Wins (0–30), Core (30–90), Scale (90+). Метрики успеха.</p></div>
+        <div class="phase"><span class="step">4</span><h4>Enablement</h4><p>Документация, обучение ответственных, внедрение циклов контроля.</p></div>
+        <div class="phase"><span class="step">5</span><h4>Monitoring</h4><p>Сбор метрик remediation, coverage, awareness. Ревизия рисков и адаптация.</p></div>
+      </div>
+    </section>
+
+    <section class="section-block" id="mapping">
+      <div class="sec-head">
+        <h2>Соответствие и охват</h2>
+        <p>Матрица показывает типовые домены, которые мы покрываем по основным нормативам и стандартам. Фактический охват зависит от выбранного пакета.</p>
+      </div>
+      <div style="overflow-x:auto">
+        <table class="matrix" aria-label="Матрица соответствия">
+          <thead><tr><th>Домены</th><th>НЦЗПД</th><th>GDPR</th><th>66 приказ</th><th>PCI DSS</th><th>Awareness</th></tr></thead>
+          <tbody>
+            <tr><td>Инвентаризация данных</td><td class="ok">Да</td><td class="ok">Да</td><td class="part">Частично</td><td class="part">Частично</td><td>—</td></tr>
+            <tr><td>Управление доступами</td><td class="ok">Да</td><td class="ok">Да</td><td class="ok">Да</td><td class="ok">Да</td><td>—</td></tr>
+            <tr><td>Документы / политики</td><td class="ok">Да</td><td class="ok">Да</td><td class="ok">Да</td><td class="part">Частично</td><td>—</td></tr>
+            <tr><td>Сканирование уязвимостей</td><td class="part">Частично</td><td class="part">Частично</td><td class="part">Частично</td><td class="ok">Да</td><td>—</td></tr>
+            <tr><td>Обучение персонала</td><td class="ok">Да</td><td class="ok">Да</td><td class="part">Частично</td><td class="part">Частично</td><td class="ok">Да</td></tr>
+            <tr><td>Реагирование на инциденты</td><td class="part">Частично</td><td class="part">Частично</td><td class="ok">Да</td><td class="ok">Да</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tagline">Legend: Да — полный охват / Частично — зависит от глубины пакета / — не применяется.</p>
+    </section>
+
+    <section class="section-block" id="benefits">
+      <div class="sec-head">
+        <h2>Почему CyberZubr</h2>
+        <p>Мы совмещаем регуляторный опыт и техническую практику: даём приоритизацию и понятные метрики для руководства.</p>
+      </div>
+      <div class="benefits">
+        <div class="benefit">
+          <div class="benefit-icon"><img src="img/compliance.svg" alt="" width="30" loading="lazy"></div>
+            <div><h3>Risk-based</h3><p>Фокусируемся на рисках и бизнес-ценности, а не на формальном количестве документов.</p></div>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon"><img src="img/scan.svg" alt="" width="30" loading="lazy"></div>
+            <div><h3>Прозрачные метрики</h3><p>Remediation SLA, coverage, awareness KPI — измеряем и подсвечиваем эффект.</p></div>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon"><img src="img/training.svg" alt="" width="30" loading="lazy"></div>
+            <div><h3>Минимизация данных</h3><p>Не собираем лишнего: только то, что нужно для выполнения задач и аудита.</p></div>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon"><img src="img/governance.svg" alt="" width="30" loading="lazy"></div>
+            <div><h3>Vendor-neutral</h3><p>Подбираем решения исходя из контекста: открытые или коммерческие без необоснованного lock-in.</p></div>
+        </div>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><span class="val"><span aria-hidden="true">↓</span>35%</span><span class="label">Среднее снижение click rate за 2 цикла</span></div>
+        <div class="kpi"><span class="val">60%</span><span class="label">Закрытие high findings в первые 45 дней</span></div>
+        <div class="kpi"><span class="val">90%</span><span class="label">Документов обновлено в течение квартала</span></div>
+        <div class="kpi"><span class="val">4x</span><span class="label">Ускорение подготовки к проверке</span></div>
+      </div>
+    </section>
+
+    <section class="section-block" id="cta">
+      <div class="cta-box">
+        <h2>Готовы обсудить ваш текущий уровень безопасности?</h2>
+        <p>Отправьте краткое описание инфраструктуры и ожиданий — мы подготовим экспресс-оценку и варианты дорожной карты. Начните с измеримого результата без лишней сложности.</p>
+        <div>
+          <a href="index.html#contacts" class="btn primary" style="text-decoration:none">Запросить консультацию</a>
+          <a href="index.html#services" class="btn ghost" style="text-decoration:none;margin-left:10px">Услуги</a>
+        </div>
+        <p class="print-note">Для PDF: Файл → Печать → Сохранить как PDF (фон включить для градиентов).</p>
+      </div>
+    </section>
+
+    <div class="footer-mini">
+      © <span id="year"></span> CyberZubr. Брошюра предоставлена «как есть». Не содержит юридических рекомендаций. Использование ограничено презентациями и первоначальной оценкой. Конфиденциальность: не включайте чувствительные данные при первом обращении.
+    </div>
+  </main>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
