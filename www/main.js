@@ -20,8 +20,12 @@ scrollTopBtn?.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smo
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav');
 if(burger){
-  burger.addEventListener('click',()=>{ nav.classList.toggle('open'); burger.classList.toggle('open'); });
-  navLinks.forEach(l=> l.addEventListener('click', ()=> nav.classList.remove('open')));
+  burger.addEventListener('click',()=>{ 
+    const opened = nav.classList.toggle('open'); 
+    burger.classList.toggle('open', opened); 
+    document.body.classList.toggle('no-scroll', opened); 
+  });
+  navLinks.forEach(l=> l.addEventListener('click', ()=> {nav.classList.remove('open'); burger.classList.remove('open'); document.body.classList.remove('no-scroll');}));
 }
 
 // Slider
@@ -135,11 +139,13 @@ const yearEl = document.getElementById('year'); if(yearEl) yearEl.textContent = 
 
 // Parallax simple
 const parallaxEls = document.querySelectorAll('.parallax');
-window.addEventListener('mousemove', e=>{
-  const cx = window.innerWidth/2; const cy = window.innerHeight/2;
-  parallaxEls.forEach(el=>{
-    const depth = parseFloat(el.dataset.depth||'0.2');
-    const x = (e.clientX - cx) * depth; const y = (e.clientY - cy) * depth;
-    el.style.transform = `translate(${x}px,${y}px)`;
+if(window.matchMedia('(pointer:fine)').matches){
+  window.addEventListener('mousemove', e=>{
+    const cx = window.innerWidth/2; const cy = window.innerHeight/2;
+    parallaxEls.forEach(el=>{
+      const depth = parseFloat(el.dataset.depth||'0.2');
+      const x = (e.clientX - cx) * depth; const y = (e.clientY - cy) * depth;
+      el.style.transform = `translate(${x}px,${y}px)`;
+    });
   });
-});
+}
