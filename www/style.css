@@ -64,7 +64,8 @@ header .logo img{width:34px;filter:drop-shadow(0 0 4px rgba(99,102,241,.6))}
 .services-grid{display:grid;gap:34px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .floating-cards{position:relative;perspective:1000px}
 .service-card{background:linear-gradient(160deg,rgba(30,41,59,.9),rgba(11,15,23,.9));padding:26px 24px;border-radius:22px;border:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;box-shadow:0 8px 28px -8px rgba(0,0,0,.55),0 2px 10px -2px rgba(0,0,0,.5);transition:transform .7s cubic-bezier(.16,.8,.24,1),border-color .5s,box-shadow .6s}
-.service-card::before{content:"";position:absolute;width:160%;height:160%;left:-40%;top:-60%;background:radial-gradient(circle at 30% 40%,rgba(99,102,241,.35),rgba(14,165,233,0));opacity:0;transition:opacity .8s}
+.service-card::before{content:"";position:absolute;width:160%;height:160%;left:-40%;top:-60%;background:radial-gradient(circle at 30% 40%,rgba(99,102,241,.35),rgba(14,165,233,0));opacity:0;transition:opacity .8s;pointer-events:none;z-index:0}
+.service-card > *{position:relative;z-index:1}
 .service-card:hover{transform:translateY(-14px) rotateX(7deg) rotateY(-6deg) scale(1.03);border-color:rgba(255,255,255,.18);box-shadow:0 18px 46px -12px rgba(0,0,0,.7),0 4px 16px -4px rgba(0,0,0,.6)}
 .service-card:hover::before{opacity:1}
 .service-card h3{position:relative}
@@ -101,6 +102,18 @@ header .logo img{width:34px;filter:drop-shadow(0 0 4px rgba(99,102,241,.6))}
 .contact-info{display:flex;flex-direction:column;gap:20px}
 .info-list{list-style:none;display:grid;gap:12px;font-size:15px;color:var(--text-dim)}
 .callout{background:linear-gradient(135deg,rgba(99,102,241,.18),rgba(14,165,233,.1));border:1px solid rgba(255,255,255,.08);padding:18px 20px;border-radius:16px;font-size:14px;color:#fff}
+.info-cards{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.info-card{background:var(--bg-alt);border:1px solid rgba(255,255,255,.07);padding:22px 20px 20px;border-radius:18px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;box-shadow:0 6px 22px -8px rgba(0,0,0,.55);transition:transform .45s,background .6s}
+.info-card::before{content:"";position:absolute;width:140%;height:140%;left:-40%;top:-60%;background:radial-gradient(circle at 30% 40%,rgba(99,102,241,.28),rgba(14,165,233,0));opacity:0;transition:opacity .8s}
+.info-card:hover{transform:translateY(-6px)}
+.info-card:hover::before{opacity:1}
+.info-card h3{font-size:16px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;background:linear-gradient(135deg,#fff,#d1d5db);-webkit-background-clip:text;background-clip:text;color:transparent}
+.info-card p, .info-card a{font-size:14px;color:#e2e8f0;word-break:break-word}
+.info-card a:hover{color:#fff}
+.mini-list{list-style:none;display:grid;gap:6px;font-size:13px;color:var(--text-dim);padding-left:0}
+.mini-list li{position:relative;padding-left:14px}
+.mini-list li::before{content:"•";position:absolute;left:0;top:-1px;color:var(--accent2)}
+.hint{font-size:12px;color:var(--text-dim);line-height:1.4}
 .footer{background:#090d13;padding:70px 0 40px;margin-top:40px;border-top:1px solid rgba(255,255,255,.08)}
 .footer-layout{display:grid;gap:50px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
 .footer .logo img{width:30px}
