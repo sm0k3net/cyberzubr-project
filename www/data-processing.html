@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>CyberZubr | Обработка персональных данных</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .doc{max-width:940px;margin:140px auto 80px;padding:0 24px;line-height:1.6;font-size:15px;color:#cbd5e1}
+    .doc h1{font-size:42px;line-height:1.1;margin-bottom:24px;font-weight:600;background:linear-gradient(135deg,#fff,#d1d5db);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .doc h2{margin-top:50px;font-size:24px;font-weight:600;color:#fff}
+    .doc h3{margin-top:36px;font-size:18px;font-weight:600;color:#fff}
+    .doc p{margin-top:14px}
+    .doc ul{margin:14px 0 0 22px;display:grid;gap:6px}
+    .doc a{color:#0ea5e9}
+    .doc a:hover{color:#38bdf8}
+    .note-box{margin-top:26px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:18px 20px;border-radius:18px;font-size:14px;color:#e2e8f0}
+    @media (max-width:640px){.doc{margin:120px auto 60px}.doc h1{font-size:34px}}
+  </style>
+</head>
+<body>
+  <main class="doc">
+    <h1>Обработка персональных данных</h1>
+    <p>Этот документ описывает принципы и минимальный объём обработки персональных данных при использовании форм обратной связи на сайте CyberZubr.</p>
+    <h2>1. Администратор</h2>
+    <p>Администратором (оператором) персональных данных выступает CyberZubr. Контактный адрес: <a href="mailto:info@cyberzubr.by">info@cyberzubr.by</a>.</p>
+    <h2>2. Цели обработки</h2>
+    <ul>
+      <li>Предоставление ответа на запрос и обратная связь</li>
+      <li>Подготовка предварительной оценки (аудит, roadmap)</li>
+      <li>Уточнение контекста запроса (при необходимости)</li>
+    </ul>
+    <h2>3. Объем обрабатываемых данных</h2>
+    <p>Минимальный набор: имя (или псевдоним), рабочий email, название компании, текст сообщения. Дополнительно по желанию: область интереса. Мы не запрашиваем лишних данных.</p>
+    <h2>4. Правовые основания</h2>
+    <p>Согласие субъекта данных (пользователя) — проставление чекбокса в форме. Для некоторых сценариев также может применяться законный интерес (подготовка предложения).</p>
+    <h2>5. Хранение</h2>
+    <p>Данные хранятся не дольше чем необходимо для ответа и последующей коммуникации (ориентировочно до 6 месяцев), после чего удаляются или анонимизируются.</p>
+    <h2>6. Передача третьим лицам</h2>
+    <p>Не передаются, за исключением случаев, прямо предусмотренных законодательством. Трансграничная передача не осуществляется без отдельного уведомления.</p>
+    <h2>7. Права субъектов данных</h2>
+    <ul>
+      <li>Право на доступ и получение копии</li>
+      <li>Право на исправление (актуализацию)</li>
+      <li>Право на отзыв согласия</li>
+      <li>Право на удаление (если нет обязательств хранения)</li>
+      <li>Право ограничить обработку</li>
+    </ul>
+    <p>Запросы направляйте на <a href="mailto:info@cyberzubr.by">info@cyberzubr.by</a>. Ответ предоставляется в разумные сроки.</p>
+    <h2>8. Безопасность</h2>
+    <p>Применяем принцип минимизации, ограниченный доступ, мониторинг уязвимостей и регулярный пересмотр конфигураций. Используем технические и организационные меры защиты.</p>
+    <h2>9. Cookies и трекинг</h2>
+    <p>Форма обратной связи не использует маркетинговые cookies. Может применяться минимальная техническая телеметрия для защиты от злоупотреблений.</p>
+    <h2>10. Обновления</h2>
+    <p>Документ может обновляться. Проверяйте дату ниже.</p>
+    <div class="note-box">Дата обновления: <span id="doc-date"></span></div>
+  </main>
+  <script>document.getElementById('doc-date').textContent=new Date().toISOString().slice(0,10);</script>
+</body>
+</html>

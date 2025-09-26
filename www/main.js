@@ -130,9 +130,19 @@ function simulateSubmit(form, statusEl){
   });
 }
 const contactForm = document.getElementById('contactForm');
-if(contactForm){ simulateSubmit(contactForm, contactForm.querySelector('.form-status')); }
+if(contactForm){ 
+  const consent = contactForm.querySelector('input[name="consent"]');
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  consent?.addEventListener('change',()=>{ submitBtn.disabled = !consent.checked; });
+  simulateSubmit(contactForm, contactForm.querySelector('.form-status')); 
+}
 const auditForm = document.getElementById('auditForm');
-if(auditForm){ simulateSubmit(auditForm, auditForm.querySelector('.mini-status')); }
+if(auditForm){ 
+  const consentMini = auditForm.querySelector('input[name="consent"]');
+  const submitBtnMini = auditForm.querySelector('button[type="submit"]');
+  consentMini?.addEventListener('change',()=>{ submitBtnMini.disabled = !consentMini.checked; });
+  simulateSubmit(auditForm, auditForm.querySelector('.mini-status')); 
+}
 
 // Year
 const yearEl = document.getElementById('year'); if(yearEl) yearEl.textContent = new Date().getFullYear();

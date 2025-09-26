@@ -232,8 +232,15 @@
             <textarea id="message" name="message" rows="5" required></textarea>
             <span class="error"></span>
           </div>
+          <div class="field full consent-block">
+            <label class="consent-label">
+              <input type="checkbox" name="consent" required />
+              <span>Подтверждаю ознакомление с <a href="data-processing.html" target="_blank" rel="noopener">правилами обработки</a> и механизмами реализации прав субъектов данных и даю согласие на обработку персональных данных для обратной связи.</span>
+            </label>
+            <span class="error"></span>
+          </div>
           <div class="form-foot">
-            <button type="submit" class="btn primary">Отправить</button>
+            <button type="submit" class="btn primary" disabled>Отправить</button>
             <p class="form-note">Нажимая «Отправить», вы соглашаетесь на обработку введённых данных для связи. *Полям обязательно для заполнения.</p>
           </div>
           <div class="form-status" role="status" aria-live="polite"></div>
@@ -320,7 +327,11 @@
         <input type="text" name="org" placeholder="Компания" />
         <input type="email" name="email" placeholder="Email*" required />
         <textarea name="scope" rows="4" placeholder="Кратко: системы, пользователи, основные риски*" required></textarea>
-        <button class="btn primary w100" type="submit">Отправить</button>
+        <label class="consent-label mini">
+          <input type="checkbox" name="consent" required />
+          <span>Согласен(а) с <a href="data-processing.html" target="_blank" rel="noopener">условиями обработки данных</a>.</span>
+        </label>
+        <button class="btn primary w100" type="submit" disabled>Отправить</button>
         <div class="mini-status" aria-live="polite"></div>
       </form>
     </div>
