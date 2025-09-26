@@ -117,31 +117,56 @@ document.addEventListener('click',e=>{
 });
 window.addEventListener('keydown',e=>{ if(e.key==='Escape'){ document.querySelectorAll('.modal[aria-hidden="false"]').forEach(m=> closeModal(m)); }});
 
-// Forms (demo submission)
-function simulateSubmit(form, statusEl){
-  form.addEventListener('submit',e=>{
+// Forms submission via Web3Forms
+async function handleWeb3Form(form, statusEl){
+  form.addEventListener('submit', async e => {
     e.preventDefault();
+    statusEl.textContent='';
+    // basic validation
     if(!form.checkValidity()){
-      form.querySelectorAll(':invalid').forEach(inp=>{ const err=inp.parentElement.querySelector('.error'); if(err) err.textContent='Заполните поле'; });
+      form.querySelectorAll(':invalid').forEach(inp=>{ const err=inp.parentElement?.querySelector?.('.error'); if(err) err.textContent='Заполните поле'; });
       return;
     }
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true; submitBtn.textContent='Отправка...';
     statusEl.textContent='Отправка...';
-    setTimeout(()=>{ statusEl.textContent='Заявка отправлена (демо). Мы свяжемся с вами.'; form.reset(); }, 1100);
+    try{
+      const formData = new FormData(form);
+      // Append a simple meta timestamp
+      formData.append('sent_at', new Date().toISOString());
+      const res = await fetch(form.action, {method:'POST', body: formData});
+      const data = await res.json();
+      if(data.success){
+        statusEl.textContent='Спасибо! Заявка успешно отправлена.';
+        form.reset();
+        // re-disable until consent re-checked
+        const consentBox = form.querySelector('input[name="consent"]');
+        if(consentBox){ submitBtn.disabled = true; }
+      } else {
+        statusEl.textContent='Ошибка отправки: '+ (data.message||'повторите позже');
+        submitBtn.disabled = false;
+      }
+    }catch(err){
+      statusEl.textContent='Сетевая ошибка. Попробуйте позже.';
+      submitBtn.disabled = false;
+    } finally {
+      submitBtn.textContent='Отправить';
+    }
   });
 }
 const contactForm = document.getElementById('contactForm');
-if(contactForm){ 
+if(contactForm){
   const consent = contactForm.querySelector('input[name="consent"]');
   const submitBtn = contactForm.querySelector('button[type="submit"]');
   consent?.addEventListener('change',()=>{ submitBtn.disabled = !consent.checked; });
-  simulateSubmit(contactForm, contactForm.querySelector('.form-status')); 
+  handleWeb3Form(contactForm, contactForm.querySelector('.form-status'));
 }
 const auditForm = document.getElementById('auditForm');
-if(auditForm){ 
+if(auditForm){
   const consentMini = auditForm.querySelector('input[name="consent"]');
   const submitBtnMini = auditForm.querySelector('button[type="submit"]');
   consentMini?.addEventListener('change',()=>{ submitBtnMini.disabled = !consentMini.checked; });
-  simulateSubmit(auditForm, auditForm.querySelector('.mini-status')); 
+  handleWeb3Form(auditForm, auditForm.querySelector('.mini-status'));
 }
 
 // Year

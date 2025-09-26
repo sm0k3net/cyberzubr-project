@@ -201,7 +201,13 @@
         <p class="sub">Получите первичную консультацию и roadmap безопасности.</p>
       </div>
       <div class="contact-layout">
-        <form class="contact-form" id="contactForm" novalidate>
+        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <!-- Web3Forms required hidden fields -->
+          <input type="hidden" name="access_key" value="e22431ad-9afd-4653-aba8-206bdd77343c" />
+          <input type="hidden" name="subject" value="Новая заявка (основная форма сайта CyberZubr)" />
+          <input type="hidden" name="from_page" value="Главная контактная форма" />
+          <!-- Honeypot -->
+          <input type="checkbox" name="botcheck" class="honey" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="field">
             <label for="name">Имя*</label>
             <input type="text" id="name" name="name" required />
@@ -323,7 +329,13 @@
       <button class="modal-close" aria-label="Закрыть" data-close>×</button>
       <h3 id="consult-title">Запрос экспресс-аудита</h3>
       <p>Опишите кратко вашу инфраструктуру и ключевые задачи. Мы предложим первичный план и ориентиры по приоритетам.</p>
-      <form class="mini-form" id="auditForm">
+      <form class="mini-form" id="auditForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <!-- Web3Forms required hidden fields -->
+        <input type="hidden" name="access_key" value="e22431ad-9afd-4653-aba8-206bdd77343c" />
+        <input type="hidden" name="subject" value="Запрос экспресс-аудита (модальное окно)" />
+        <input type="hidden" name="from_page" value="Модальная форма аудита" />
+        <!-- Honeypot -->
+        <input type="checkbox" name="botcheck" class="honey" style="display:none" tabindex="-1" autocomplete="off" />
         <input type="text" name="org" placeholder="Компания" />
         <input type="email" name="email" placeholder="Email*" required />
         <textarea name="scope" rows="4" placeholder="Кратко: системы, пользователи, основные риски*" required></textarea>
